@@ -18,3 +18,7 @@ Do define and share a schema. Publish it for consumers to build their own intern
 #### Further reading
 
 - [Data/Contract Coupling in Messaging](https://channel9.msdn.com/Blogs/Subscribe/DataContract-Coupling-in-Messaging) by Clemens Vasters.
+
+## Contributing
+
+Pull requests gladly accepted for your best practices, advice, and guidance.
