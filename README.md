@@ -6,9 +6,11 @@ Best practices, guidance, and anti-patterns to avoid when building an applicatio
 
 ### Define a schema for commands and events
 
+> Services share schema and contract, not class.
+
 Don't share types (i.e. .NET classes compiled into assemblies) as a way to express contracts in a messaging system. 
 
-Do define and share a schema. Publish it for consumers to build their own internal representation of the data.
+Do define and share a schema and contract. Publish it for consumers to build their own internal representation of your data.
 
 #### Examples
 
@@ -17,6 +19,7 @@ Do define and share a schema. Publish it for consumers to build their own intern
 
 #### Further reading
 
+- [At the Boundaries, Applications are Not Object-Oriented](http://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/) by Mark Seemann
 - [Data/Contract Coupling in Messaging](https://channel9.msdn.com/Blogs/Subscribe/DataContract-Coupling-in-Messaging) by Clemens Vasters.
 
 ## Contributing
