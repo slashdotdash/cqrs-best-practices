@@ -24,7 +24,7 @@ Do define and share a schema and contract. Publish it for consumers to build the
 
 ## Read model
 
-## Autonomous read model projections
+### Autonomous read model projections
 
 Don't share data between projections.
 
@@ -34,13 +34,25 @@ Do use autonomous projectors responsible for their own data. Projectors should r
 
 - [The Ugly of Event Sourcing–Real-world Production Issues](http://www.continuousimprover.com/2017/11/the-ugly-of-event-sourcingreal-world.html)
 
-## Projectors should never crash
+### Projectors should never crash
 
 Don't enforce consistency rules in your read model projection.
 
 Do follow Postel's robustness principle:
 
 > Be conservative in what you send, be liberal in what you accept.
+
+## Versioning
+
+#### Further reading
+
+- [Versioning in an Event Sourced System](https://leanpub.com/esversioning)
+
+## Data migration
+
+#### Further reading
+
+- [The Dark Side of Event Sourcing: Managing Data Conversion](http://files.movereem.nl/2017saner-eventsourcing.pdf)
 
 ---
 
