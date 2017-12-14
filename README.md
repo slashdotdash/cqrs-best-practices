@@ -22,6 +22,12 @@ Do define and share a schema and contract. Publish it for consumers to build the
 - [At the Boundaries, Applications are Not Object-Oriented](http://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/) by Mark Seemann
 - [Data/Contract Coupling in Messaging](https://channel9.msdn.com/Blogs/Subscribe/DataContract-Coupling-in-Messaging) by Clemens Vasters.
 
+### Don't include value objects in domain events
+
+Do use simple types in domain events (strings, numbers, lists).
+
+Don't use value objects in events as events are immutable, whereas value objects may change over time.
+
 ## Read model
 
 ### Autonomous read model projections
