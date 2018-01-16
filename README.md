@@ -22,11 +22,24 @@ Do define and share a schema and contract. Publish it for consumers to build the
 - [At the Boundaries, Applications are Not Object-Oriented](http://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/) by Mark Seemann
 - [Data/Contract Coupling in Messaging](https://channel9.msdn.com/Blogs/Subscribe/DataContract-Coupling-in-Messaging) by Clemens Vasters.
 
-### Don't include value objects in domain events
+### Value objects in domain events
 
 Do use simple types in domain events (strings, numbers, lists).
 
 Don't use value objects in events as events are immutable, whereas value objects may change over time.
+
+### Use integration events between services, not domain events
+
+Don't expose domain events outside of the service, or bounded context, that creates them.
+
+Do use integration events. An event that occurred in the past within an bounded context which may be interesting to other domains, applications or third party services. The purpose of integration events is to explicitly propagate committed transactions and updates to additional subsystems. You may convert and publish a domain event to external services, as an integration event, after it has been committed.
+
+This makes is easier to change internal domain events, while allowing external integration events to provide a stable API to consumers. It also allows a service to only expose a subset of its domain events as integration events. Integration events can be enriched with additional data, such as from a read model projection, that is relevant to external uses.
+
+#### Futher reading
+
+- [Domain Events vs. Integration Events](https://medium.com/@arleypadua/domain-events-vs-integration-events-5eb29a34fdbc)
+- [Domain events versus integration events](https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/domain-events-design-implementation#domain-events-versus-integration-events)
 
 ## Read model
 
