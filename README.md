@@ -32,12 +32,15 @@ Don't use value objects in events as events are immutable, whereas value objects
 
 Don't expose domain events outside of the service, or bounded context, that creates them.
 
-Do use integration events. An event that occurred in the past within an bounded context which may be interesting to other domains, applications or third party services. The purpose of integration events is to explicitly propagate committed transactions and updates to additional subsystems. You may convert and publish a domain event to external services, as an integration event, after it has been committed.
+Do use integration events.
 
-This makes is easier to change internal domain events, while allowing external integration events to provide a stable API to consumers. It also allows a service to only expose a subset of its domain events as integration events. Integration events can be enriched with additional data, such as from a read model projection, that is relevant to external uses.
+An external integration event is a public event produced by a bounded context which may be interesting to other domains, applications or third party services. The purpose of integration events is to explicitly propagate committed transactions and updates to additional subsystems. You may convert and publish a domain event to external services, as an integration event, after it has been committed.
+
+Using integration events makes it easier to change internal domain events, while allowing external integration events to provide a stable API to consumers. It also allows a service to only expose a subset of its domain events as integration events. Integration events can be enriched with additional data, such as from a read model projection, that is relevant to external uses.
 
 #### Futher reading
 
+- [Internal vs External Models](https://leanpub.com/esversioning/read#leanpub-auto-internal-vs-external-models)
 - [Domain Events vs. Integration Events](https://medium.com/@arleypadua/domain-events-vs-integration-events-5eb29a34fdbc)
 - [Domain events versus integration events](https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/domain-events-design-implementation#domain-events-versus-integration-events)
 
