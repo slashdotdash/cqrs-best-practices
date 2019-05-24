@@ -26,7 +26,9 @@ Do define and share a schema and contract. Publish it for consumers to build the
 
 Do use simple types in domain events (strings, numbers, lists).
 
-Don't use value objects in events as events are immutable, whereas value objects may change over time.
+Don't use value objects in events as events are immutable, whereas the definition of value objects may change over time.
+
+Value object's are immutable, but their definition (class or schema) can be changed at any time by developers. Doing so will inadvertently break any existing events unless an explicit upgrade strategy is implemented. Using simple types in domain events alleviates this somewhat because developers should understand that changing an event will affect existing stored events.
 
 ### Use integration events between services, not domain events
 
